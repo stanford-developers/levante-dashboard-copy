@@ -2,7 +2,7 @@
     <PvPanel header="Link Users" class="link-users-panel">
       <div class="info-message-container">
         <i class="pi pi-exclamation-circle"></i>
-        <p>Make sure you are editing the downloaded file from adding users. This new file contains all of your information and LEVANTE UIDs.</p>
+        <p>Make sure you are editing the downloaded file you got after adding users. This new file contains all of your information and LEVANTE UIDs.</p>
       </div>
 
       <div class="how-to-section">
@@ -17,9 +17,9 @@
   
       <ul>
         <li><b>id</b> - A unique identifier for the user in your CSV. Start from 1.</li>
-        <li><b>userType</b> - The type of user. Must be one of the following: child, parent, teacher.</li>
-        <li><b>parentId</b><span class="required">*</span> - The unique identifier for the parent. Start from 1.</li>
-        <li><b>teacherId</b><span class="required">*</span> - The unique identifier for the teacher. Start from 1.</li>
+        <li><b>userType</b> - The type of user. Must be one of the following: child, caredigver, teacher.</li>
+        <li><b>caregiverId</b><span class="required">*</span> - The unique identifier for the child's caregiver. Start from 1.</li>
+        <li><b>teacherId</b><span class="required">*</span> - The unique identifier for the child's teacher. Start from the next available number.</li>
         <li><b>uid</b> - The unique identifier that is returned when the user was added.</li>
       </ul>
   
@@ -27,13 +27,12 @@
         <span class="required">*</span> = These fields are ONLY required for child users.
       </p>
   
-      <p>Below is an example of what your CSV should look like. Note that you may upload a CSV with any columns
-      you need, but those not required for linking will be ignored during processing.</p>
+      <p>Below is an example of what your CSV/spreadsheet should look like. Only the required columns will be processed.</p>
   
       <img
-        id="example-image"
-        src="https://storage.googleapis.com/road-dashboard/link-users-example.png"
-        alt="CSV upload example"
+        id="link-users-example-image"
+        :src="linkUsersExampleImage"
+        alt="Link Users CSV example"
         style="width: 100%; max-width: 1400px; height: auto;"
       />
     </PvPanel>
@@ -41,6 +40,7 @@
 
 <script setup>
   import PvPanel from 'primevue/panel';
+  import linkUsersExampleImage from '@/assets/images/levante-link-users-example.png';
 </script>
 
 <style scoped>
